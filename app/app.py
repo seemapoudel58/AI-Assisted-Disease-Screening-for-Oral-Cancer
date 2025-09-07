@@ -21,7 +21,7 @@ DEFAULT_CONF = 0.5
 DEFAULT_IOU = 0.45
 
 st.set_page_config(
-    page_title='AI Assisted Disease Screening for Oral Cancer | मुखको क्यान्सर पहिचान',
+    page_title='AI Assisted Disease Screening for Oral Cancer ',
     page_icon='🦷',
     layout='wide',
     initial_sidebar_state='collapsed'
@@ -29,6 +29,10 @@ st.set_page_config(
 
 st.markdown(
     "<h1 style='text-align:center;margin-top:0;'>AI Assisted Disease Screening for Oral Cancer</h1>",
+    unsafe_allow_html=True
+)
+st.markdown(
+    "<h3 style='text-align:center;margin-top:0;'> मुखको क्यान्सर पहिचान</h3>",
     unsafe_allow_html=True
 )
 
@@ -54,11 +58,11 @@ def draw_detections(image_rgb: np.ndarray, detections: List[Dict]) -> np.ndarray
         cid = det['class_id']
         cname = det['class_name']
         color = colors[cid % len(colors)]
-        cv2.rectangle(annotated, (x1, y1), (x2, y2), color, 2)
+        cv2.rectangle(annotated, (x1, y1), (x2, y2), color, 10)
         label = f"{cname}: {conf:.2f}"
-        (tw, th), _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.6, 2)
-        cv2.rectangle(annotated, (x1, max(y1 - th - 6, 0)), (x1 + tw + 6, y1), color, -1)
-        cv2.putText(annotated, label, (x1 + 3, max(y1 - 6, 0)), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
+        (tw, th), _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 1, 2)
+        cv2.rectangle(annotated, (x1, max(y1 - th - 6, 0)), (x1 + tw + 6, y1), color, 10)
+        cv2.putText(annotated, label, (x1 + 3, max(y1 - 6, 0)), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
     return annotated
 
 
@@ -190,7 +194,7 @@ def show_batch(engine: YOLOInferenceEngine):
 def main():
     try:
         engine = load_engine()
-        st.success(f"Model loaded: best.pt | Device: {DEVICE.upper()}")
+        # st.success(f"Model loaded: best.pt | Device: {DEVICE.upper()}")
     except Exception as e:
         st.error(str(e))
         st.stop()
