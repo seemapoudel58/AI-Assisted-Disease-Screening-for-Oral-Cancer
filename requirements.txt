@@ -1,0 +1,14 @@
+torch>=1.10
+torchvision>=0.11
+opencv-python
+numpy
+matplotlib
+tqdm
+pillow
+pyyaml
+scipy
+torchcam
+ultralytics>=8.0.0
+torch==2.6.0+cu124
+torchaudio==2.6.0+cu124
+torchvision==0.21.0+cu124
