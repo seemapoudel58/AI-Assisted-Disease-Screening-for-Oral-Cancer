@@ -204,14 +204,14 @@ class YOLOInferenceEngine:
             colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0), (255, 0, 255), (0, 255, 255)]
             color = colors[class_id % len(colors)]
             
-            cv2.rectangle(image, (x1, y1), (x2, y2), color, 2)
+            cv2.rectangle(image, (x1, y1), (x2, y2), color, 17)
             
             label = f"{class_name}: {conf:.3f}"
-            cv2.putText(image, label, (x1, y1-10), cv2.FONT_HERSHEY_SIMPLEX, 0.7, color, 2)
+            cv2.putText(image, label, (x1, y1-10), cv2.FONT_HERSHEY_SIMPLEX, 0.7, color, 17)
         
         summary_text = f"Detections: {len(detections)} | Time: {result['inference_time']:.3f}s"
-        cv2.putText(image, summary_text, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
-        
+        cv2.putText(image, summary_text, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 17)
+
         image_name = os.path.basename(result['image_path'])
         name, ext = os.path.splitext(image_name)
         output_path = os.path.join(output_dir, f"{name}_result{ext}")
@@ -372,11 +372,11 @@ class YOLOInferenceEngine:
                 
                 colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0)]
                 color = colors[class_id % len(colors)]
-                
-                cv2.rectangle(image, (x1, y1), (x2, y2), color, 2)
-                
+
+                cv2.rectangle(image, (x1, y1), (x2, y2), color, 17)
+
                 label = f"{class_name}: {conf:.3f}"
-                cv2.putText(image, label, (x1, y1-10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 2)
+                cv2.putText(image, label, (x1, y1-10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 17)
             
             ax.imshow(image)
             ax.set_title(f"{os.path.basename(result['image_path'])}\n{len(detections)} detections")
