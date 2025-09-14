@@ -63,9 +63,9 @@ def draw_detections(image_rgb: np.ndarray, detections: List[Dict]) -> np.ndarray
     annotated = image_rgb.copy()
     colors = [
         (0, 255, 0),    # Healthy
-        (0, 180, 0),    # Benign
-        (0, 0, 255),    # OPMD
-        (255, 255, 0),  # OCA
+        (255, 255, 0),    # Benign
+        (255, 255, 0),    # OPMD
+        (255, 0, 0),  # OCA
     ]
     for det in detections:
         x1, y1, x2, y2 = det['bbox']
