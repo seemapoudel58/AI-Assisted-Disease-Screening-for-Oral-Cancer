@@ -114,7 +114,7 @@ def generate_pdf_single(patient_info: dict, report_df: pd.DataFrame, annotated_i
     if annotated_image is not None:
         tmp_img_path = file_path.replace('.pdf','_temp.png')
         cv2.imwrite(tmp_img_path, cv2.cvtColor(annotated_image, cv2.COLOR_RGB2BGR))
-        elements.append(RLImage(tmp_img_path, width=600, height=400))
+        elements.append(RLImage(tmp_img_path, width=300, height=200))
         elements.append(Spacer(1,12))
 
     # ensure referral column
@@ -316,7 +316,7 @@ def show_single_image(engine: YOLOInferenceEngine):
                     st.markdown("### Analysis Results")
                     col1, col2, col3 = st.columns([0.5,2,0.5])
                     with col2:
-                        st.image(annotated_image, caption=f'AI Analysis - Patient: {patient_name}', use_container_width=True)
+                        st.image(annotated_image, caption=f'AI Analysis - Patient: {patient_name}', width=500)
 
                 # Heavy step: Prepare report + generate PDF + CSV
                 with st.spinner("📄 Preparing report for download..."):
