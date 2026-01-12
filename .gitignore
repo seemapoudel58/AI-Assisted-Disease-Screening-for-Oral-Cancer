@@ -8,9 +8,6 @@ data
 *.pdf
 *.csv
 *.png
-!app/logo.png
-!app/nepali_*.png
-!assets/images/ReadmeImage.png
 .DS_Store
 DS_Store
 *.log
@@ -18,7 +15,6 @@ DS_Store
 temp/
 tmp/
 *.pt
-!app/best.pt
 .ipynb_checkpoints
 *.ipynb_checkpoints
 .venv
