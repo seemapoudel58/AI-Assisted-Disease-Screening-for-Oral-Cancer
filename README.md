@@ -1,4 +1,4 @@
-# 🦷 AI-Assisted Oral Cancer Screening Web App
+# AI-Assisted Oral Cancer Screening Web App
 
 ![Application Screenshot](assets/images/ReadmeImage.png)
 
@@ -8,26 +8,26 @@ This web application provides an intelligent, user-friendly interface for screen
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
-- **🧠 AI-Powered Detection** – Real-time analysis using YOLO deep learning models
+- **AI-Powered Detection** – Real-time analysis using YOLO deep learning models
 
-- **📸 Multiple Input Modes**
+- **Multiple Input Modes**
   - **Single Image Mode** – Upload and analyze one image.
   - **Batch Analysis Mode** – Upload multiple images or a ZIP folder for bulk screening.
   - **Live Mode** – Capture directly via webcam or iPhone Continuity Camera.
 
-- **📊 Automatic Report Generation** – Generates color-coded risk assessments and downloadable medical PDF reports.
+- **Automatic Report Generation** – Generates color-coded risk assessments and downloadable medical PDF reports.
 
-- **🌐 Bilingual Support** – English report text with Nepali impressions and visual guidance.
+- **Bilingual Support** – English report text with Nepali impressions and visual guidance.
 
-- **🧾 Batch Export** – Download all findings as CSV or PDF in one click.
+- **Batch Export** – Download all findings as CSV or PDF in one click.
 
-- **🖼️ Interactive Visualization** – Displays annotated images highlighting detected lesions.
+- **Interactive Visualization** – Displays annotated images highlighting detected lesions.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Oral Cancer/
@@ -63,16 +63,16 @@ Oral Cancer/
 
 ---
 
-## ⚙️ Installation Guide
+## Installation Guide
 
-### 1️⃣ Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone <your-repository-url>
 cd Oral-Cancer-Screening
 ```
 
-### 2️⃣ Create a Virtual Environment
+### 2. Create a Virtual Environment
 
 ```bash
 # For Mac/Linux
@@ -84,7 +84,7 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-### 3️⃣ Install Dependencies
+### 3. Install Dependencies
 
 For running the application:
 ```bash
@@ -98,7 +98,7 @@ cd training
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Add the YOLO Model
+### 4. Add the YOLO Model
 
 Place your trained YOLO model file (`best.pt`) inside:
 
@@ -106,7 +106,7 @@ Place your trained YOLO model file (`best.pt`) inside:
 assets/models/best.pt
 ```
 
-### 5️⃣ Run the Web App
+### 5. Run the Web App
 
 ```bash
 cd app
@@ -121,7 +121,7 @@ http://localhost:8501
 
 ---
 
-## 🧠 AI Model Details
+## AI Model Details
 
 - **Model Type:** YOLOv8 (custom trained for oral lesion detection)
 - **Classes:** Healthy, Benign, OPMD, OCA
@@ -130,18 +130,18 @@ http://localhost:8501
 
 ---
 
-## 📋 Example Output
+## Example Output
 
 | AI Diagnosis | Confidence | Risk Assessment | Clinical Recommendation |
 |-------------|------------|----------------|------------------------|
-| Oral Cavity Carcinoma | 96.7% | 🔴 High Risk | Immediate oncology consultation |
-| OPMD | 84.3% | 🟠 Medium Risk | Specialist referral and biopsy consideration |
-| Benign Lesion | 92.1% | 🟡 Low Risk | Routine follow-up recommended |
-| Healthy | 99.2% | 🟢 No Risk | Maintain oral hygiene |
+| Oral Cavity Carcinoma | 96.7% | High Risk | Immediate oncology consultation |
+| OPMD | 84.3% | Medium Risk | Specialist referral and biopsy consideration |
+| Benign Lesion | 92.1% | Low Risk | Routine follow-up recommended |
+| Healthy | 99.2% | No Risk | Maintain oral hygiene |
 
 ---
 
-## 🏗️ Tech Stack
+## Tech Stack
 
 | Component | Technology |
 |-----------|-----------|
@@ -154,18 +154,18 @@ http://localhost:8501
 
 ---
 
-## 🧾 Generated Reports
+## Generated Reports
 
 Each analysis automatically generates:
 
-- ✅ Annotated lesion image
-- ✅ Clinical summary (Diagnosis, Risk, Referral)
-- ✅ English + Nepali impression
-- ✅ Downloadable PDF report
+- Annotated lesion image
+- Clinical summary (Diagnosis, Risk, Referral)
+- English + Nepali impression
+- Downloadable PDF report
 
 ---
 
-## 🔧 Configuration
+## Configuration
 
 All configuration is centralized in `app/config.py`:
 - Model paths
@@ -176,7 +176,7 @@ All configuration is centralized in `app/config.py`:
 
 ---
 
-## 📝 Usage Notes
+## Usage Notes
 
 - Ensure `best.pt` model file is in `assets/models/`
 - All paths are relative and cross-platform compatible
@@ -185,7 +185,7 @@ All configuration is centralized in `app/config.py`:
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 ---
